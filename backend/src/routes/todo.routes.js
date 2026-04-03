@@ -6,7 +6,7 @@ const {validateToDo} = require("../middleware/validateTodo.middleware");
 const auth = require("../middleware/auth.middleware");
 
 router.get("/",getTodos)
-router.post("/", validateToDo, createTodo);
+router.post("/", auth, validateToDo, createTodo);
 router.put("/:id",updateTodo)
 router.delete("/:id", deleteTodo);
 
